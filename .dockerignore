@@ -1,3 +1,6 @@
 docs
+src
 docker-compose.yml
 Dockerfile
+.local
+.ipynb_checkpoints

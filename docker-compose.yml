@@ -3,6 +3,7 @@ services:
   quickdraw:
     build: .
     volumes:
-      - .:/home/quickdraw-ten/
+      - ./src:/home/quickdraw-ten/src
+      - ./data:/home/quickdraw-ten/data
     ports:
       - 8888:8888

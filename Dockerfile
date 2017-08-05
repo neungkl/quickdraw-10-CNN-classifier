@@ -1,9 +1,12 @@
 FROM tensorflow/tensorflow
 
-RUN mkdir /home/quickdraw-ten
+RUN pip install keras
+RUN pip install --upgrade jupyter
+
+RUN useradd -ms /bin/bash quickdraw-ten
 WORKDIR /home/quickdraw-ten
 
 COPY data-download.sh .
+RUN chown -R quickdraw-ten .
 RUN chmod +x ./data-download.sh
 
-RUN pip install keras
