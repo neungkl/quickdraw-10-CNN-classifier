@@ -1,6 +1,7 @@
 FROM tensorflow/tensorflow
 
 RUN pip install keras
+RUN pip install h5py
 RUN pip install --upgrade jupyter
 
 RUN useradd -ms /bin/bash quickdraw-ten
