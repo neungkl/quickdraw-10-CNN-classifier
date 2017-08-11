@@ -1,10 +1,8 @@
 version: '3.3'
 services:
-  quickdraw:
+  web:
     build: .
     volumes:
-      - ./src:/home/quickdraw-ten/src
-      - ./data:/home/quickdraw-ten/data
-      - ./model:/home/quickdraw-ten/model
+      - ./web:/home/web/
     ports:
-      - 8888:8888
+      - 8000:8000

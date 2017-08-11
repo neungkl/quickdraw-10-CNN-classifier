@@ -1,13 +1,14 @@
-FROM tensorflow/tensorflow
+FROM python:2.7
 
-RUN pip install keras
-RUN pip install h5py
-RUN pip install --upgrade jupyter
+RUN curl -o get-pip.py https://bootstrap.pypa.io/get-pip.py
+RUN python get-pip.py
 
-RUN useradd -ms /bin/bash quickdraw-ten
-WORKDIR /home/quickdraw-ten
+RUN mkdir /home/web
+WORKDIR /home/web
 
-COPY data-download.sh .
-RUN chown -R quickdraw-ten .
-RUN chmod +x ./data-download.sh
+COPY ./web/requirement.txt requirement.txt
+RUN pip install -r requirement.txt
 
+COPY ./model/ ../model/
+COPY ./web/ .
+CMD ["gunicorn", "-b 0.0.0.0:8000", "app:app"]

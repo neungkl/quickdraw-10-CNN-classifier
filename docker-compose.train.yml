@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  quickdraw:
+    build:
+      context: .
+      dockerfile: Dockerfile.train
+    volumes:
+      - ./src:/home/quickdraw-ten/src
+      - ./data:/home/quickdraw-ten/data
+      - ./model:/home/quickdraw-ten/model
+    ports:
+      - 8888:8888
