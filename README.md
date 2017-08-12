@@ -1,6 +1,12 @@
 Quickdraw 10 CNN Classifier
 ===
 
+## Demo
+
+:point_right: [https://quickdraw-10-classification.herokuapp.com/](https://quickdraw-10-classification.herokuapp.com/)
+
+## Introduction
+
 This project is demo project that getting hand-drawing image and try to classification which kind of image of input.
 
 ![Web Preview](docs/web-preview.png)
@@ -9,10 +15,6 @@ It is machine learning project to classify [Google Quickdraw image](https://gith
 And also serve hand-writting website with [Flask](http://flask.pocoo.org/)
 
 ![Quickdraw Preview](docs/quickdraw-preview.jpg)
-
-## Demo
-
-:point_right: [https://quickdraw-10-classification.herokuapp.com/](https://quickdraw-10-classification.herokuapp.com/)
 
 ## Website Usage
 
