@@ -11,4 +11,4 @@ RUN pip install -r requirement.txt
 
 COPY ./model/ ../model/
 COPY ./web/ .
-CMD ["gunicorn", "-b 0.0.0.0:8000", "app:app"]
+CMD ["gunicorn", "app:app"]

@@ -2,6 +2,8 @@ version: '3.3'
 services:
   web:
     build: .
+    environment:
+      - PORT=8000
     volumes:
       - ./web:/home/web/
     ports:

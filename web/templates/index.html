@@ -61,7 +61,7 @@
     </section>
     <script src="{{ url_for('static', filename='sketch.min.js') }}"></script>
     <script
-      src="http://code.jquery.com/jquery-2.2.4.min.js"
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
       integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
       crossorigin="anonymous"></script>
     <script>
@@ -175,6 +175,11 @@
         }, 0);
       }
 
+      function canvasContainerResize() {
+        width = $('#draw-container').width() || 500;
+        canvasContainer.width = canvasContainer.height = width;
+      }
+
       $(function() {
         canvasContainer = $("#draw-container canvas")[0];
         canvasContainerCtx = canvasContainer.getContext('2d');
@@ -182,8 +187,10 @@
         canvasPreviewCtx = canvasPreview.getContext('2d');
 
         canvasPreview.width = canvasPreview.height = inputSize;
-        canvasContainer.width = canvasContainer.height = imageSize;
-      })
+        canvasContainerResize();
+
+        $(window).resize(canvasContainerResize)
+      });
 
       var isDraw = false;
       Sketch.create({

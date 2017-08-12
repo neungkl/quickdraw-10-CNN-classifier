@@ -10,6 +10,10 @@ And also serve hand-writting website with [Flask](http://flask.pocoo.org/)
 
 ![Quickdraw Preview](docs/quickdraw-preview.jpg)
 
+## Demo
+
+:point_right: [https://quickdraw-10-classification.herokuapp.com/](https://quickdraw-10-classification.herokuapp.com/)
+
 ## Website Usage
 
 1. Compose Docker
@@ -42,6 +46,15 @@ docker-compose exec quickdraw ./data-download.sh
 
 ```
 docker-compose up -f docker-compose.train.yml
+```
+
+## Heroku Deployment
+
+```
+heroku container:login
+heroku create
+heroku container:push web
+heroku open
 ```
 
 ## License
